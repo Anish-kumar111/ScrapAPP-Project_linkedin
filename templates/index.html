@@ -1,0 +1,37 @@
+
+{% extends 'base.html'  %} 
+
+{% block title %}My Scraping Website{% endblock title %}
+<script src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/2.1.2/sweetalert.min.js"></script>
+{% block body %}<body>
+<div class="container-fluid">
+<form method="get">{% csrf_token %}
+
+
+ <!-- <div class="mb-3">
+    <label for="name" class="form-label">Name</label>
+    <input type="text" class="form-control" id="name" name="name">
+  </div> -->
+
+  <div class="mb-3">
+    <label for="text" class="form-label">Website link</label>
+    <input type="text" class="form-control" id="link" name="link" ></div>
+ <div class="mb-3">
+    <label for="exampleInputEmail1" class="form-label">Linkedin Email</label>
+    <input type="email" class="form-control" id="email" name="email" ></div>
+ <div class="mb-3">
+    <label for="exampleInputpassword1" class="form-label">Linkedin Password</label>
+    <input type="password" class="form-control" id="password" name="password" value="" ></div>
+    </div>    
+    </div>
+
+
+  <button type="submit" class="btn btn-primary">Submit</button>
+</form>
+</div>
+
+{% endblock body %}
+
+</body>
+{% load sweetify %}
+{% sweetify %}
