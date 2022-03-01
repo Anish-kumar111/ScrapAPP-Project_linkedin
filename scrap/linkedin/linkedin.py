@@ -92,6 +92,10 @@ class Linkedin(webdriver.Chrome):
         emp_list = self.find_element_by_xpath("//a[@class='face-pile__cta']")
         # emp_list= self.find_element(By.XPATH, "//body/div[5]/div[3]/div[1]/div[2]/div[1]/div[2]/main[1]/div[1]/section[1]/div[1]/div[2]/div[1]/div[2]/div[2]/a[2]/span[1]")
         emp_list.click()
+    def openprofile(self):
+        emp_list = self.find_element_by_xpath("//a[@class='app-aware-link']")
+        # emp_list= self.find_element(By.XPATH, "//body/div[5]/div[3]/div[1]/div[2]/div[1]/div[2]/main[1]/div[1]/section[1]/div[1]/div[2]/div[1]/div[2]/div[2]/a[2]/span[1]")
+        emp_list.click()
 
 
     def pull_titles(self):
@@ -216,38 +220,38 @@ class Linkedin(webdriver.Chrome):
        
     def education(self):
   
-        link= self.find_elements(By.XPATH, "//body/div[6]/div[3]/div[1]/div[1]/div[2]/div[1]/div[1]/main[1]/section[4]/div[3]/ul[1]/li[1]/div[1]/div[2]/div[1]/a[1]")
+        # link= self.find_elements(By.XPATH, "//body/div[6]/div[3]/div[1]/div[1]/div[2]/div[1]/div[1]/main[1]/section[4]/div[3]/ul[1]/li[1]/div[1]/div[2]/div[1]/a[1]")
        
         
-        for e in link:
-         print(e.get_attribute('href'))
+        # for e in link:
+        #  link.append(e.get_attribute('href'))
 
-        title= self.find_elements(By.XPATH, "//body/div[6]/div[3]/div[1]/div[1]/div[2]/div[1]/div[1]/main[1]/section[4]/div[3]/ul[1]/li[1]/div[1]/div[2]/div[1]/a[1]/div[1]/span[1]/span[1]")
+        # title= self.find_elements(By.XPATH, "//body/div[6]/div[3]/div[1]/div[1]/div[2]/div[1]/div[1]/main[1]/section[4]/div[3]/ul[1]/li[1]/div[1]/div[2]/div[1]/a[1]/div[1]/span[1]/span[1]")
        
         
-        for e in title:
-         print(e.get_attribute('innerText'))
+        # for e in title:
+        #  title.append(e.get_attribute('innerText'))
 
 
-        desc= self.find_elements(By.XPATH, "//body/div[6]/div[3]/div[1]/div[1]/div[2]/div[1]/div[1]/main[1]/section[4]/div[3]/ul[1]/li[1]/div[1]/div[2]/div[1]/a[1]/span[1]/span[1]")
+        # desc= self.find_elements(By.XPATH, "//body/div[6]/div[3]/div[1]/div[1]/div[2]/div[1]/div[1]/main[1]/section[4]/div[3]/ul[1]/li[1]/div[1]/div[2]/div[1]/a[1]/span[1]/span[1]")
        
         
-        for e in desc:
-         print(e.get_attribute('innerText'))         
+        # for e in desc:
+        #  desc.append(e.get_attribute('innerText'))         
 
 
-        sess= self.find_elements(By.XPATH, "//body/div[6]/div[3]/div[1]/div[1]/div[2]/div[1]/div[1]/main[1]/section[4]/div[3]/ul[1]/li[1]/div[1]/div[2]/div[1]/a[1]/span[2]/span[1]")
-       
+        # sess= self.find_elements(By.XPATH, "//body/div[6]/div[3]/div[1]/div[1]/div[2]/div[1]/div[1]/main[1]/section[4]/div[3]/ul[1]/li[1]/div[1]/div[2]/div[1]/a[1]/span[2]/span[1]")
+        sess = self.find_element_by_xpath("//body/div[6]/div[3]/div[1]/div[1]/div[2]/div[1]/div[1]/main[1]/section[4]/div[3]/ul[1]/li[1]/div[1]/div[2]/div[1]/a[1]/span[2]/span[1]").text
         
         for e in sess:
-         strings = e.get_attribute('innerText')
- 
-        #  print(strings)
-         data=zip()
-         df = pd.DataFrame(data, columns = ['Name','Bio','Location','Links'])
+        #  sess.append(e.get_attribute('innerText'))
+        #  list= (e.text
+         print(e)
+        #  data=zip(link,title,desc,sess)
+        #  df = pd.DataFrame(data, columns = ['Name','Bio','Location','Links'])
 
-         print(df)
-         df.to_csv("Education.csv")   
+        #  print(df)
+        #  df.to_csv("Education.csv")   
         
 
         
@@ -279,14 +283,17 @@ class Linkedin(webdriver.Chrome):
          print(e.get_attribute('innerText'))        
 
 
-        sess= self.find_elements(By.XPATH, "//body/div[6]/div[3]/div[1]/div[1]/div[2]/div[1]/div[1]/main[1]/section[3]/div[3]/ul[1]/li[1]/div[1]/div[2]/div[1]/div[1]/span[2]/span[1]")
+        # sess= self.find_elements(By.XPATH, "//body/div[6]/div[3]/div[1]/div[1]/div[2]/div[1]/div[1]/main[1]/section[3]/div[3]/ul[1]/li[1]/div[1]/div[2]/div[1]/div[1]/span[2]/span[1]")
        
         
-        for e in sess:
-         strings = e.get_attribute('innerText')
-         with open('Experience.csv','w') as f :
-          writer = csv.writer(f)
-          writer.writerows(strings)
-          f.close()
-         print(strings)
+        # for e in sess:
+        #  strings = e.get_attribute('innerText')
+     
+        #  print(strings)
+
+        #  data=zip()
+        #  df = pd.DataFrame(data, columns = ['Name','Bio','Location','Links'])
+
+        #  print(df)
+        #  df.to_csv("Experience.csv")            
 

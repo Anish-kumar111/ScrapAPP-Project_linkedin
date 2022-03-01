@@ -15,8 +15,7 @@ def index(request):
         email = request.GET.get('email')
         password = request.GET.get('password') 
         # messages.success(request, f"form filled")       
-        sweetify.success(request, 'Scraping Done', text='Thanks for choosing us',
-                     persistent='Scrap Again')  
+        
         try:
             # driver.get(link)
             with Linkedin() as Lbot:
@@ -26,9 +25,18 @@ def index(request):
                 Lbot.openemp_page()
                 Lbot.signup()
                 Lbot.signin(email=email,pasw=password)
+                # Lbot.openprofile()
 
+                # Lbot.page_signup()
+                # Lbot.page_signin(email=email,pasw=password)  
+                # Lbot.openprofile()
                 Lbot.pull_titles()
-                # Lbot.pull_subtitles()
+                
+                # Lbot.experience()
+
+                # Lbot.education()
+                sweetify.success(request, 'Scraping Done', text='Thanks for choosing us',
+                     persistent='Scrap Again')
                
                 
                
@@ -42,13 +50,14 @@ def index(request):
         except :
         
             
-                
-            return render(request, 'index.html')
+     
+               return render(request, 'index.html')
         # return HttpResponse("Scraping Done !")
         # else :
             
-
-        return redirect("/")
+             
+                             
+       return redirect("/")
         
 
 
