@@ -12,14 +12,14 @@ import os
 import pandas as pd
 
 
-os.environ['PATH'] = r"C:\SeleniumDriver"
+os.environ['PATH'] = r"/"
 
 
 
 
 class Linkedin(webdriver.Chrome):
     # def __init__(self,  teardown=False ):
-    def __init__(self, executable_path="C:/SeleniumDriver",  teardown=False ):
+    def __init__(self, executable_path="/",  teardown=False ):
        
     #    self.items = self.pull_divs()
     #    self.result_element=self.pull_items()
